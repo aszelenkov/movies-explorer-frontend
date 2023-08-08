@@ -24,6 +24,7 @@ function Register() {
       noValidate
       isValid={isValid}
       values={values}
+      pageType='register'
     >
       <label 
         className='auth-with-form__label' 

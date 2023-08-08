@@ -1,11 +1,10 @@
 .auth-with-form {
-  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   max-width: 396px;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 .auth-with-form_large {
   width: 100%;
@@ -82,10 +81,22 @@
   margin-top: 10px;
 }
 
-.auth-with-form__footer-wrapper {
+
+.auth-with-form__footer-wrapper-signin {
   margin: 0;
   width: 100%;
-  padding: 69px 0 70px 0;
+  padding: 149px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: padding 0.3s ease;
+}
+
+.auth-with-form__footer-wrapper-signup {
+  margin: 0;
+  width: 100%;
+  padding: 61px 0 70px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,9 +146,6 @@
   .auth-with-form__header-wrapper {
     padding: 232px 0 0 0;
   }
-  .auth-with-form__footer-wrapper {
-    padding: 69px 0 232px 0;
-  }
 }
 
 @media screen and (max-width: 420px) {
@@ -147,7 +155,6 @@
 
   .auth-with-form__header-wrapper {
     padding: 56px 0 0 0;
-
   }
 
   .logo__link {
@@ -160,7 +167,15 @@
   }
 
   .auth-with-form__footer-wrapper {
+    padding: 239px 0 30px 0;
+  }
+
+  .auth-with-form__footer-wrapper-signup {
     padding: 150px 0 30px 0;
+  }
+
+  .auth-with-form__footer-wrapper-signin {
+    padding: 238px 0 30px 0;
   }
 
   .auth-with-form__footer-submit-button {
@@ -169,13 +184,10 @@
 
   .auth-with-form__footer-question {
     font-size: 12px;
-    
   }
 
   .auth-with-form__footer-link {
     font-size: 12px;
     margin-left: 7px;
   }
-
-
 }

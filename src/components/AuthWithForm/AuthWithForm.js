@@ -1,11 +1,23 @@
 import './AuthWithForm.css';
 import Logo from '../Logo/Logo';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function AuthWithForm(props) {
+
+  const location = useLocation();
+
+  const isSignInPage = location.pathname === '/signin';
+  const isSignUpPage = location.pathname === '/signup';
+
+  const footerPaddingClass = isSignInPage
+    ? 'auth-with-form__footer-wrapper-signin'
+    : isSignUpPage
+    ? 'auth-with-form__footer-wrapper-signup'
+    : '';
+
   return (
-   <section className='auth-with-form auth-with-form_large'>
+   <section className={`auth-with-form auth-with-form_large`}>
       <div className='auth-with-form__header-wrapper'>
         <Logo />
         <h1 className='auth-with-form__title'>{props.title}</h1>
@@ -13,7 +25,7 @@ function AuthWithForm(props) {
           {props.children}
         </form>
       </div>
-      <div className='auth-with-form__footer-wrapper'>
+      <div className={`auth-with-form__footer-wrapper ${footerPaddingClass}`}>
         <button
           className='auth-with-form__footer-submit-button button-hover'
           type='submit'

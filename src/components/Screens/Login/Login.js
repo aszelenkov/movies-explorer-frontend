@@ -24,6 +24,7 @@ function Login() {
       noValidate
       isValid={isValid}
       values={values}
+      pageType='login'
     >
       <label 
         className='auth-with-form__label' 
