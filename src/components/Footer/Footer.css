@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.footer__large {
+.footer_large {
   width: 100%;
 }
 
@@ -59,14 +59,14 @@
 }
 
 @media screen and (max-width: 1279px) {
-  .footer__large {
+  .footer_large {
     padding: 0 30px;
     box-sizing: border-box;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .footer__large {
+  .footer_large {
     padding: 0 10px;
     box-sizing: border-box;
     max-height: 253px;

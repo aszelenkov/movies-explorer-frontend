@@ -1,8 +1,10 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/fonts.css);
 
-.body {
+.root {
   background-color: #202020;
+  margin: 0;
+  padding: 0;
 }
 
 .page__main {
@@ -49,8 +51,6 @@
   outline: #4285F4 solid 1px;
   transition: 0.2s;
 }
-
-
 
 @media screen and (max-width: 1279px) {
   .page__main_screen_movies {

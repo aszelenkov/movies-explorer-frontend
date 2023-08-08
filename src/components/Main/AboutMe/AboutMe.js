@@ -5,7 +5,7 @@ import studentPic from '../../../images/student-pic.png';
 
 function AboutMe() {
   return (
-    <section className='about-me about-me_size_l' id='about-me'>
+    <section className='about-me about-me_large' id='about-me'>
       <h1 className='about-me__title'>Студент</h1>
       <div className='about-me__info'>
         <div className='about-me__info-container'>

@@ -10,7 +10,7 @@ function NavTab() {
   };
 
   return (
-    <nav className='nav-tab nav-tab_size_l'>
+    <nav className='nav-tab'>
       <ul className='nav-tab__list list'>
         <li>
           <button onClick={() => scrollToSection('about-project')} className='nav-tab__button button-hover'>

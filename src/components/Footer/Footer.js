@@ -4,7 +4,7 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer className='footer footer__large'>
+    <footer className='footer footer_large'>
       <h2 className='footer__title'>
         Учебный проект Яндекс.Практикум х BeatFilm.
       </h2>

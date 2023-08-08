@@ -6,7 +6,7 @@ function MoviesCardList() {
   return (
       <section 
         className='moviesCardList' 
-        aria-label='Секция с карточками'
+        aria-label='Секция с карточками фильмов'
       >
         <ul className='moviesCardList__cards'
         >

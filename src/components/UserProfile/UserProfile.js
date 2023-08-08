@@ -5,7 +5,7 @@ import profileIcon from '../../images/user-icon.svg';
 
 function UserProfile() {
   return (
-    <div className='user-profile__box'>
+    <div className='user-profile'>
       <div className='user-profile__wrapper'>
         <button className='user-profile__overlap-group link-hover'>
           <Link to='/profile' className='user-profile__text '>Аккаунт</Link>

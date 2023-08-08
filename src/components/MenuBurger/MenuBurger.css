@@ -29,7 +29,7 @@
   top: 10px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 768px) {
   .menu-burger__button {
     padding: 0;
     display: block;

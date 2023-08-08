@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function AuthWithForm(props) {
   return (
-    <div className='auth-with-form page__main'>
+   <section className='auth-with-form auth-with-form_large'>
       <div className='auth-with-form__header-wrapper'>
         <Logo />
         <h1 className='auth-with-form__title'>{props.title}</h1>
@@ -31,7 +31,7 @@ function AuthWithForm(props) {
           </Link>
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

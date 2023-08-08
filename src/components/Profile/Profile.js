@@ -56,7 +56,7 @@ const Profile = () => {
   };
 
   return (
-    <main className='page__main'>
+    <main>
       <section className='profile'>
         <div className='profile__wrapper'>
           <h1 className='profile__title'>Привет, Виталий!</h1>
@@ -67,10 +67,10 @@ const Profile = () => {
             noValidate
             onSubmit={handleSaveButtonClick}
           >
-            <label className='profile-form__label'>
-              <span className='profile-form__input-title input-focus'>Имя</span>
+            <label className='profile__form-label'>
+              <span className='profile__form-input-title input-focus'>Имя</span>
               <input
-                className='profile-form__input'
+                className='profile__form-input'
                 type='text'
                 value={profileName}
                 name='profileName'
@@ -83,11 +83,11 @@ const Profile = () => {
                 onChange={handleNameChange}
               />
             </label>
-            <span className='profile-form__input-error'>{errors.profileName}</span>
-            <label className='profile-form__label'>
-              <span className='profile-form__input-title'>E-mail</span>
+            <span className='profile__form-input-error'>{errors.profileName}</span>
+            <label className='profile__form-label'>
+              <span className='profile__form-input-title'>E-mail</span>
               <input
-                className='profile-form__input'
+                className='profile__form-input'
                 type='email'
                 value={profileEmail}
                 name='profileEmail'
@@ -98,7 +98,7 @@ const Profile = () => {
                 onChange={handleEmailChange}
               />
             </label>
-            <span className='profile-form__input-error'>{errors.profileEmail}</span>
+            <span className='profile__form-input-error'>{errors.profileEmail}</span>
           </form>
 
           <div className='profile__button-wrapper'>

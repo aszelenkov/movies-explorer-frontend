@@ -8,7 +8,7 @@ import Portfolio from './Portfolio/Portfolio';
 
 function Main() {
   return (
-      <main className='landing page__main'>
+      <main className='landing'>
         <Promo/>
         <NavTab/>
         <AboutProject/>

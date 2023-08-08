@@ -34,7 +34,7 @@
   font-weight: 500;
 }
 
-@media screen and (max-width: 1201px) {
+@media screen and (max-width: 768px) {
   .navigation {
     position: fixed;
     flex-direction: column;

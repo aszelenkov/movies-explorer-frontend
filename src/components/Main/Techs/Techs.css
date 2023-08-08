@@ -18,7 +18,7 @@
   letter-spacing: -0.04em;
 }
 
-.techs__large {
+.techs_large {
   max-height: 625px;
   width: 100%;
 }
@@ -71,7 +71,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-  .techs__large {
+  .techs_large {
     padding: 0 50px;
     box-sizing: border-box;
     max-height: 567px;
@@ -116,7 +116,7 @@
     border-bottom: #000 solid 1px;
   }
 
-  .techs__large {
+  .techs_large {
     padding: 0 18px;
     box-sizing: border-box;
     max-height: 651px;

@@ -14,7 +14,7 @@ const projectStages = [
 
 function AboutProject() {
   return (
-    <section className='about-project about-project__large'>
+    <section className='about-project about-project_large'>
       <h1 className='about-project__title'>О проекте</h1>
       <ul className='about-project__info list'>
         {projectStages.map((stage, index) => (

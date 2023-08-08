@@ -13,7 +13,7 @@ function MoviesCard() {
   };
 
   return (
-    <li className="moviesCard__item">
+    <li className="moviesCard">
       <img className="moviesCard__photo" 
         src={picColorPic}
         alt='Фото карточки'

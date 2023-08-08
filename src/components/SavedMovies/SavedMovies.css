@@ -1,8 +1,8 @@
-.movies {
+.savedMovies {
   width: 100%;
 }
 
-.movies_large {
+.savedMovies_large {
   width: 100%;
   padding: 0 70px 0;
   transition: padding 0.3s ease;
@@ -10,13 +10,13 @@
 }
 
 @media screen and (max-width: 1279px) {
-  .movies_large {
+  .savedMovies_large {
     padding: 0 30px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .movies_large {
+  .savedMovies_large {
     padding: 0 10px;
   }
 }

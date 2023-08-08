@@ -1,4 +1,4 @@
-.user-profile__box {
+.user-profile {
   background-color: transparent;
   display: flex;
   flex-direction: row;
@@ -9,10 +9,6 @@
   border: 0px none;
   height: 32px;
   width: 100px;
-}
-
-.user-profile {
-  width: 100%;
 }
 
 .user-profile__overlap-group-wrapper {

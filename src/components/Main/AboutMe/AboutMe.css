@@ -5,7 +5,7 @@
   background-color: #202020;
 }
 
-.about-me_size_l {
+.about-me_large {
   max-height: 554px;
   width: 100%;
 }
@@ -79,7 +79,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-  .about-me_size_l {
+  .about-me_large {
     padding: 0 50px;
     box-sizing: border-box;
   }
@@ -120,7 +120,7 @@
     flex-direction: column-reverse;
     align-items: center;
   }
-  .about-me_size_l {
+  .about-me_large {
     padding: 0 14px;
     box-sizing: border-box;
     max-height: 904px;
