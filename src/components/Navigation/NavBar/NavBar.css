@@ -1,0 +1,56 @@
+.nav-bar__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-bar__links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-bar__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.nav-bar__link-login {
+  border-radius: 3px;
+  width: 76px;
+  min-height: 32px;
+  background-color: #2BE080;
+  color: #000000;
+}
+
+.nav-bar__button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-bar__links {
+    gap: 14px;
+  }
+
+  .nav-bar__link {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .nav-bar__link-login {
+    width: 54px;
+    min-height: 26px;
+  }
+}

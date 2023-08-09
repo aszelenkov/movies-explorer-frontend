@@ -1,0 +1,193 @@
+.auth-with-form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 396px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.auth-with-form_large {
+  width: 100%;
+}
+
+.auth-with-form__header-wrapper {
+  width: 100%;
+  padding: 70px 0 0 0;
+  transition: padding 0.3s ease;
+}
+
+.auth-with-form__title {
+  padding: 40px 0 40px 0;
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: padding 0.3s ease;
+}
+
+.auth-with-form__form {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-with-form__label {
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #8b8b8b;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.auth-with-form__input {
+  padding: 0;
+  padding-left: 15px;
+  outline: none;
+  min-height: 46px;
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+  border-radius: 8px;
+  background: #2f2f2f;
+}
+
+.auth-with-form__input:focus {
+  outline: #4285f4 solid 1px;
+}
+.auth-with-form__input:hover {
+  outline: #8b8b8b solid 1px;
+}
+
+.auth-with-form__input-error {
+  margin: 0;
+  height: 20px;
+  color: #ee3465;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.auth-with-form__input-error:last-child {
+  margin-top: 10px;
+}
+
+
+.auth-with-form__footer-wrapper-signin {
+  margin: 0;
+  width: 100%;
+  padding: 149px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: padding 0.3s ease;
+}
+
+.auth-with-form__footer-wrapper-signup {
+  margin: 0;
+  width: 100%;
+  padding: 61px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: padding 0.3s ease;
+}
+
+.auth-with-form__footer-submit-button {
+  margin: 0;
+  width: 100%;
+  padding: 13px 0 15px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+  border-radius: 3px;
+  background-color: #4285f4;
+}
+
+.auth-with-form__footer-question {
+  width: 100%;
+  margin: 0;
+  padding-top: 16px;
+  color: #8b8b8b;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.auth-with-form__footer-link {
+  margin-left: 6px;
+  color: #4285f4;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1279px) {
+  .auth-with-form__header-wrapper {
+    padding: 232px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .auth-with-form {
+    max-width: 260px;
+  }
+
+  .auth-with-form__header-wrapper {
+    padding: 56px 0 0 0;
+  }
+
+  .logo__link {
+    text-align: center;
+  }
+
+  .auth-with-form__title {
+    padding: 50px 0 80px 0;
+    text-align: center;
+  }
+
+  .auth-with-form__footer-wrapper {
+    padding: 239px 0 30px 0;
+  }
+
+  .auth-with-form__footer-wrapper-signup {
+    padding: 150px 0 30px 0;
+  }
+
+  .auth-with-form__footer-wrapper-signin {
+    padding: 238px 0 30px 0;
+  }
+
+  .auth-with-form__footer-submit-button {
+    font-size: 12px;
+  }
+
+  .auth-with-form__footer-question {
+    font-size: 12px;
+  }
+
+  .auth-with-form__footer-link {
+    font-size: 12px;
+    margin-left: 7px;
+  }
+}
