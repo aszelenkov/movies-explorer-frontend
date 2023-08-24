@@ -3,13 +3,22 @@ import Header from '../../Header/Header'
 import SavedMovies from '../../SavedMovies/SavedMovies'
 import Footer from '../../Footer/Footer'
 
-function SavedMoviesScreen() {
+function SavedMoviesScreen({ 
+  loggedIn, 
+  savedMovies, 
+  onDeleteCard 
+}) {
   return (
-    <>
-      <Header />
-      <SavedMovies />
+    <div className="page-with-footer">
+      <Header loggedIn={loggedIn}/>
+      <div className="content">
+        <SavedMovies 
+          savedMovies={savedMovies}
+          onDeleteCard={onDeleteCard}
+        />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

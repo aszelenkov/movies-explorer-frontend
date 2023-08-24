@@ -1,43 +1,71 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import './MoviesCard.css';
-import picColorPic from '../../../images/pic-color-pic.jpg';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import "./MoviesCard.css";
+import { MOVIES_BASE_URL } from "../../../utils/constants";
+import { changeTimeDuration } from "../../../utils/utils";
 
-function MoviesCard() {
+function MoviesCard({
+  card,
+  onLikeCard,
+  onDeleteCard,
+  saved,
+  savedMovies,
+}) {
   const location = useLocation();
-  const [liked, setLiked] = useState(false);
 
-
-  const handleLikeClick = () => {
-    setLiked(!liked);
+  const handleDeleteCard = () => {
+    onDeleteCard(card);
   };
+  
+  const onCardClick = () => {
+    if (saved) {
+      onDeleteCard(savedMovies.filter((c) => c.movieId === card.id)[0]);
+    } else {
+      onLikeCard(card);
+    }
+  };
+  
+  const imageUrl =
+    typeof card.image === "string" && card.image.startsWith("http")
+      ? card.image
+      : `${MOVIES_BASE_URL}${card.image.url}`;
+
+  const cardLikeButtonClassName = `${
+    saved ? "moviesCard__like moviesCard__like_active" : "moviesCard__like"
+  }`;
 
   return (
     <li className="moviesCard">
-      <img className="moviesCard__photo" 
-        src={picColorPic}
-        alt='Фото карточки'
-      />
-      <div className='moviesCard__title-block'>
-        <h2 className="moviesCard__title">В погоне за Бенкси</h2>
-        <p className='moviesCard__subtitle-time'>1ч 42м</p>
+      <a
+        className="moviesCard__link"
+        href={card.trailerLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img className="moviesCard__photo" src={imageUrl} alt={card.nameRU} />
+      </a>
+      <div className="moviesCard__title-block">
+        <h2 className="moviesCard__title">{card.nameRU}</h2>
+        <p className="moviesCard__subtitle-time">
+          {changeTimeDuration(card.duration)}
+        </p>
       </div>
       <div className="moviesCard__like-block">
-        {location.pathname === '/saved-movies' ? (
-          <button 
+        {location.pathname === "/saved-movies" ? (
+          <button
             className="moviesCard__trash"
             type="button"
-            aria-label='Удалить'
-            >
-          </button>
-        ) : (
-          <button 
-            className={liked ? 'moviesCard__like moviesCard__like_active' : 'moviesCard__like'}
-            type="button"
-            aria-label='Нравится'
-            onClick={handleLikeClick}
+            aria-label="Удалить карточку фильма из сохраненных"
+            onClick={handleDeleteCard}
           ></button>
-          )}
+        ) : (
+          <button
+            className={cardLikeButtonClassName}
+            type="button"
+            aria-label="Нравится"
+            onClick={onCardClick}
+          ></button>
+        )}
       </div>
     </li>
   );

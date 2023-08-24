@@ -1,17 +1,21 @@
+import React, { useEffect } from 'react';
 import AuthWithForm from '../../AuthWithForm/AuthWithForm';
 import { useFormAndValidation } from '../../../hooks/useFormAndValidation';
+import { NAME_PATTERN, EMAIL_PATTERN } from '../../../utils/constants';
 
-function Register() {
+function Register({onRegister}) {
 
   const {
     values, 
     handleChange, 
     errors, 
-    isValid, 
-    resetForm, 
-    setValues, 
-    setIsValid 
+    isValid,  
   } = useFormAndValidation();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onRegister(values.name, values.email, values.password);
+  }
 
   return (
     <AuthWithForm
@@ -23,7 +27,7 @@ function Register() {
       link='/signin'
       noValidate
       isValid={isValid}
-      values={values}
+      onSubmit={handleSubmit} 
       pageType='register'
     >
       <label 
@@ -33,11 +37,13 @@ function Register() {
       </label>
       <input 
         className='auth-with-form__input'
-        type='name'
+        type='text'
         name='name'
         id='name-input'
         required
+        value={values.name || ''}
         onChange={handleChange}
+        pattern={NAME_PATTERN}
         minLength='2'
         maxLength='30'
       />
@@ -55,10 +61,10 @@ function Register() {
         type='email'
         name='email'
         id='email-input'
+        value={values.email || ''}
         required
         onChange={handleChange}
-        minLength='2'
-        maxLength='25'
+        pattern={EMAIL_PATTERN}
       />
       <span 
         className='auth-with-form__input-error email-input-error'>
@@ -74,7 +80,8 @@ function Register() {
         type='password'
         name='password'
         id='password-input'
-        minLength='5'
+        value={values.password || ''}
+        minLength='8'
         required
         onChange={handleChange}
       />

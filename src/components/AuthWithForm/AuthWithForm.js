@@ -21,15 +21,16 @@ function AuthWithForm(props) {
       <div className='auth-with-form__header-wrapper'>
         <Logo />
         <h1 className='auth-with-form__title'>{props.title}</h1>
-        <form className='auth-with-form__form' id={props.formName}>
+        <form className='auth-with-form__form' id={props.formName}onSubmit={props.onSubmit}>
           {props.children}
         </form>
       </div>
       <div className={`auth-with-form__footer-wrapper ${footerPaddingClass}`}>
         <button
-          className='auth-with-form__footer-submit-button button-hover'
+          className={`auth-with-form__footer-submit-button ${!props.isValid ? 'auth-with-form__footer-submit-button_disabled' : ''}`}
           type='submit'
           form={props.formName}
+          disabled={!props.isValid}
         >
           {props.buttonText}
         </button>

@@ -119,6 +119,22 @@
   background-color: #4285f4;
 }
 
+.auth-with-form__footer-submit-button:hover {
+  opacity: .8;
+  transition: opacity .7s;
+  cursor: pointer;
+}
+
+.auth-with-form__footer-submit-button_disabled {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+}
+
+.auth-with-form__footer-submit-button_disabled:hover {
+  cursor: no-drop;
+  opacity: 1;
+}
+
 .auth-with-form__footer-question {
   width: 100%;
   margin: 0;

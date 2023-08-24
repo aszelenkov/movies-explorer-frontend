@@ -10,7 +10,7 @@ function Navigation({ isOpenedMenuBurger }) {
     <nav
       className={`navigation ${
         isOpenedMenuBurger ? 'navigation_active' : ''
-      }`}
+      }`} aria-label='Навигация'
     >
       <ul className='navigation__list list'>
         <li className='navigation__item navigation__item_hidden'>

@@ -5,9 +5,8 @@ import { useLocation } from 'react-router-dom';
 import MenuBurger from '../MenuBurger/MenuBurger';
 import NavBar from '../Navigation/NavBar/NavBar';
 
-function Header() {
+function Header({ loggedIn }) {
   const location = useLocation();
-  const [IsloggedIn, setLoggedIn] = React.useState(true);
   
   const getHeaderClassName = () => {
     return location.pathname === '/' ? 'header header_landing' : 'header header_main';
@@ -17,7 +16,7 @@ function Header() {
     <header className={getHeaderClassName()}>
       <div className='header__wrapper'>
         <Logo/>
-        {!IsloggedIn ? (
+        {!loggedIn ? (
           <NavBar />
         ) : (
         <MenuBurger />
@@ -29,5 +28,3 @@ function Header() {
 }
 
 export default Header;
-
-

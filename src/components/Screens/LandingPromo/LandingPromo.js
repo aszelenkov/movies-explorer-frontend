@@ -2,10 +2,10 @@ import React from 'react';
 import Header from '../../Header/Header'
 import Main from '../../Main/Main'
 import Footer from '../../Footer/Footer'
-function LandingPromo() {
+function LandingPromo({ loggedIn }) {
   return (
     <>
-      <Header />
+      <Header loggedIn={loggedIn} />
       <Main />
       <Footer />
     </>

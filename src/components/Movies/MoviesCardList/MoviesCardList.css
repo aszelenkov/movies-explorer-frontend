@@ -10,7 +10,7 @@
   width: 100%;
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(364px, 1fr));
   gap: 37px 24px;
   box-sizing: border-box;
   object-fit: cover;
@@ -36,7 +36,7 @@
 }
 
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1200px) {
   .moviesCardList__cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px 30px;
