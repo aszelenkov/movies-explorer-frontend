@@ -6,5 +6,7 @@
 ## Публичный сервер
 [aszelenkov.nomoredomains.xyz](https://aszelenkov.nomoredomains.xyz)
 
-IP: 158.160.114.224
+## Pull request
+[https://github.com/aszelenkov/movies-explorer-frontend/pull/2](https://github.com/aszelenkov/movies-explorer-frontend/pull/2)
 
+IP: 158.160.114.224
