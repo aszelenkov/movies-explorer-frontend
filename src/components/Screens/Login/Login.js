@@ -1,17 +1,23 @@
 import AuthWithForm from '../../AuthWithForm/AuthWithForm';
 import { useFormAndValidation } from '../../../hooks/useFormAndValidation';
+import { EMAIL_PATTERN } from '../../../utils/constants';
 
-function Login() {
+function Login({onLogin, isLoading}) {
 
   const {
     values, 
     handleChange, 
     errors, 
     isValid, 
-    resetForm, 
-    setValues, 
-    setIsValid 
   } = useFormAndValidation();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!values.email || !values.password) {
+      return;
+    }
+    onLogin(values.email, values.password);
+  };
 
   return (
     <AuthWithForm
@@ -23,8 +29,9 @@ function Login() {
       link='/signup'
       noValidate
       isValid={isValid}
-      values={values}
       pageType='login'
+      onSubmit={handleSubmit} 
+      isLoading={isLoading}
     >
       <label 
         className='auth-with-form__label' 
@@ -36,8 +43,10 @@ function Login() {
         type='email'
         name='email'
         id='email-input'
+        value={values.email || ''}
         required
         onChange={handleChange}
+        pattern={EMAIL_PATTERN}
         minLength='2'
         maxLength='30'
       />
@@ -55,7 +64,8 @@ function Login() {
         type='password'
         name='password'
         id='password-input'
-        minLength='5'
+        value={values.password || ''}
+        minLength='8'
         required
         onChange={handleChange}
       />

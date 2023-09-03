@@ -2,7 +2,11 @@ import './NotFound.css'
 import {useNavigate} from 'react-router-dom';
 
 function NotFound() {
-  const goBackPage = useNavigate();
+  const navigate = useNavigate();
+
+  function handleGoBackPage() {
+    navigate(-3);
+  }
   return (
     <main>
       <section className='not-found'>
@@ -11,7 +15,7 @@ function NotFound() {
         <button
           type='button'
           className='not-found__button button-hover'
-          onClick={() => goBackPage(-1)}
+          onClick={handleGoBackPage}
         >
           Назад
         </button>

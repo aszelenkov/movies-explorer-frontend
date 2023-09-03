@@ -5,6 +5,7 @@
   width: 100%;
   max-width: 1280px;
   min-height: 74px;
+  flex-shrink: 0;
 }
 
 .header_landing {

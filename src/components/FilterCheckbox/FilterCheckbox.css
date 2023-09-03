@@ -1,7 +1,7 @@
 .filter {
   width: 100%;
   box-sizing: border-box;
-  padding-top: 41px;
+  padding-top: 23px;
   display: flex;
   justify-content: center;
 }    
@@ -72,12 +72,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .search__filter {
-      padding: 42px 0 0 0;
-  }
-
   .filter__slider {
       font-size: 11px;
   }
-
 }

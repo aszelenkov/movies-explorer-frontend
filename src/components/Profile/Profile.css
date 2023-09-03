@@ -27,6 +27,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .profile__form {
@@ -104,6 +106,14 @@
   line-height: normal;
 }
 
+.profile__server-error_hidden {
+  display: none;
+}
+
+.profile__server-error_visible {
+  display: block;
+}
+
 .profile__button-edit {
   width: 100%;
   padding: 0;
@@ -133,9 +143,20 @@
   background-color: #3456f3;
 }
 
+.profile__button-save:hover {
+  opacity: .8;
+  transition: opacity .7s;
+  cursor: pointer;
+}
+
 .profile__button-save_disabled {
   background-color: #F8F8F8;
   color: #C2C2C2;
+}
+
+.profile__button-save_disabled:hover {
+  cursor: no-drop;
+  opacity: 1;
 }
 
 .profile__button-exit {
