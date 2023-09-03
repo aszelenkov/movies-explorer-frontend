@@ -35,7 +35,7 @@
   padding: 0;
   width: 30px;
   height: 30px;
-  background-image: url(../../../images/movies-card-like-save.svg);
+  background-image: url(../../images/movies-card-like-save.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -49,7 +49,7 @@
 }
 
 .moviesCard__like_active {
-  background-image: url(../../../images/movies-card-like-saved.svg);
+  background-image: url(../../images/movies-card-like-saved.svg);
 }
 
 .moviesCard__like_active:hover {
@@ -60,7 +60,7 @@
   padding: 0;
   width: 30px;
   height: 30px;
-  background-image: url(../../../images/movies-card-trash.svg);
+  background-image: url(../../images/movies-card-trash.svg);
   background-position: center;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -166,5 +166,9 @@
 
   .moviesCard__subtitle-time {
     font-size: 10px;
+  }
+
+  .moviesCard__trash {
+    display: block; 
   }
 }

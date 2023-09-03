@@ -67,7 +67,7 @@ function App() {
     MainApi
       .createSavedMovie(card)
       .then((newMovie) => {
-        setSavedMovies([newMovie, ...savedMovies]);
+        setSavedMovies((prevMovies) => [newMovie, ...prevMovies]);
       })
       .catch((err) => {
         setIsSuccess(false);
@@ -103,14 +103,14 @@ function App() {
       MainApi
         .getSavedMovies()
         .then((cardsData) => {
-          console.log(cardsData);
+          console.log("Полученный список фильмов:", cardsData);
           setSavedMovies(cardsData.reverse());
         })
         .catch((err) => {
           console.error(`Ошибка: ${err}`);
         });
     }
-  }, [loggedIn, navigate]);
+  }, [loggedIn]);
 
   const handleRegister = async (name, email, password) => {
     try {
@@ -201,7 +201,7 @@ function App() {
                   loggedIn ? (
                     <Navigate to="/movies" />
                   ) : (
-                    <Login onLogin={handleLogin} />
+                    <Login onLogin={handleLogin} isLoading={isLoading} />
                   )
                 }
               />
@@ -211,7 +211,7 @@ function App() {
                   loggedIn ? (
                     <Navigate to="/movies" />
                   ) : (
-                    <Register onRegister={handleRegister} />
+                    <Register onRegister={handleRegister} isLoading={isLoading}/>
                   )
                 }
               />

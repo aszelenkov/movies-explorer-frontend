@@ -53,8 +53,8 @@ function Profile({ onSignOut, handleConfirmStatus }) {
   };
 
   const updateUserInfo = (values) => {
-    setIsServerError(false);
     setIsLoading(true);
+    setIsServerError(false);
     return MainApi.setUserInfo({
       name: values.profileName,
       email: values.profileEmail,
@@ -144,7 +144,7 @@ function Profile({ onSignOut, handleConfirmStatus }) {
                   !isValid || isLoading ? "profile__button-save_disabled" : ""
                 }`}
                 type="submit"
-                disabled={!isValid}
+                disabled={!isValid || isLoading}
                 onClick={handleSaveButtonClick}
               >
                 Сохранить

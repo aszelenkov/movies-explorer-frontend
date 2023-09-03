@@ -1,11 +1,11 @@
 import "./SearchForm.css";
 import React, { useState, useEffect } from "react";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
-import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
+import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 import { useLocation } from "react-router-dom";
-import { SEARCH_MSG, KEYS } from "../../../utils/constants";
+import { SEARCH_MSG, KEYS } from "../../utils/constants";
 
-function SearchForm({ onSearchMovies, onFilterMovies, isShortMovies, resetShowMovies }) {
+function SearchForm({ onSearchMovies, onFilterMovies, isShortMovies }) {
   const location = useLocation().pathname;
   const [isServerError, setIsServerError] = useState(false);
   const {
@@ -31,11 +31,8 @@ function SearchForm({ onSearchMovies, onFilterMovies, isShortMovies, resetShowMo
     e.preventDefault();
     if (isValid) {
       onSearchMovies(values.searchForm);
-      if (location.pathname === "/movies") {
-        resetShowMovies('movies');
-      }
     }
-  };
+};
   
   return (
     <section className="searchForm" aria-label="Поиск карточек фильмов">

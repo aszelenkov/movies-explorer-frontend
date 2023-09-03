@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import AuthWithForm from '../../AuthWithForm/AuthWithForm';
 import { useFormAndValidation } from '../../../hooks/useFormAndValidation';
 import { NAME_PATTERN, EMAIL_PATTERN } from '../../../utils/constants';
 
-function Register({onRegister}) {
+function Register({onRegister, isLoading}) {
 
   const {
     values, 
@@ -29,6 +29,7 @@ function Register({onRegister}) {
       isValid={isValid}
       onSubmit={handleSubmit} 
       pageType='register'
+      isLoading={isLoading}
     >
       <label 
         className='auth-with-form__label' 

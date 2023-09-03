@@ -1,4 +1,5 @@
-export const MAIN_BASE_URL = "https://api.aszelenkov.nomoredomains.xyz";
+// export const MAIN_BASE_URL = "https://api.aszelenkov.nomoredomains.xyz";
+export const MAIN_BASE_URL = "http://localhost:3000";
 export const MOVIES_BASE_URL = "https://api.nomoreparties.co";
 export const MOVIES_API_IMG = "https://api.nomoreparties.co/beatfilm-movies";
 export const EMAIL_PATTERN = "^([^ ]+@[^ ]+\\.[a-z]{2,8}|)$";

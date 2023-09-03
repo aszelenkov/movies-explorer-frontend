@@ -30,7 +30,7 @@ function AuthWithForm(props) {
           className={`auth-with-form__footer-submit-button ${!props.isValid ? 'auth-with-form__footer-submit-button_disabled' : ''}`}
           type='submit'
           form={props.formName}
-          disabled={!props.isValid}
+          disabled={!props.isValid || props.isLoading}
         >
           {props.buttonText}
         </button>

@@ -2,7 +2,7 @@ import AuthWithForm from '../../AuthWithForm/AuthWithForm';
 import { useFormAndValidation } from '../../../hooks/useFormAndValidation';
 import { EMAIL_PATTERN } from '../../../utils/constants';
 
-function Login({onLogin}) {
+function Login({onLogin, isLoading}) {
 
   const {
     values, 
@@ -31,6 +31,7 @@ function Login({onLogin}) {
       isValid={isValid}
       pageType='login'
       onSubmit={handleSubmit} 
+      isLoading={isLoading}
     >
       <label 
         className='auth-with-form__label' 

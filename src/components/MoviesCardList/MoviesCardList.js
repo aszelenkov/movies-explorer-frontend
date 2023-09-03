@@ -9,7 +9,7 @@ import {
   MORE_CARDS,
   RESOLUTIONS,
   SEARCH_MSG,
-} from "../../../utils/constants";
+} from "../../utils/constants";
 
 function MoviesCardList({
   cards,
@@ -20,7 +20,7 @@ function MoviesCardList({
   isNotFound,
   onLikeCard,
   onDeleteCard,
-  resetShowMovies,
+  searchClicked,
 }) {
   const location = useLocation().pathname;
   const [showCards, setShowCards] = useState(0);
@@ -52,10 +52,6 @@ function MoviesCardList({
   };
 
   useEffect(() => {
-    showScreenResolutions();
-  }, [resetShowMovies]);
-
-  useEffect(() => {
     const handleResize = () => {
       showScreenResolutions();
     };
@@ -67,6 +63,10 @@ function MoviesCardList({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    showScreenResolutions();
+  }, [searchClicked]);
 
   const renderMovieCards = (movieArray) => {
     return movieArray.map((card) => (

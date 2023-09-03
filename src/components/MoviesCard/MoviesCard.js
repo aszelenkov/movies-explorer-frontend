@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./MoviesCard.css";
-import { MOVIES_BASE_URL } from "../../../utils/constants";
-import { changeTimeDuration } from "../../../utils/utils";
+import { MOVIES_BASE_URL } from "../../utils/constants";
+import { changeTimeDuration } from "../../utils/utils";
 
 function MoviesCard({
   card,

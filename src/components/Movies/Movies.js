@@ -1,25 +1,19 @@
 import "./Movies.css";
 import React, { useState, useEffect } from "react";
-import SearchForm from "./SearchForm/SearchForm";
-import MoviesCardList from "./MoviesCardList/MoviesCardList";
+import SearchForm from "../SearchForm/SearchForm";
+import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import { filterMoviesByTitle, filterMoviesByDuration } from "../../utils/utils";
 import * as MoviesApi from "../../utils/MoviesApi";
 import { KEYS } from "../../utils/constants";
 
 function Movies({ onLikeCard, onDeleteCard, savedMovies }) {
-  const [showMovies, setShowMovies] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
   const [isShortMovies, setIsShortMovies] = useState(false);
   const [isSearchError, setIsSearchError] = useState(false);
   const [originalMovies, setOriginalMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
-
-  const resetShowMovies = (component) => {
-    if (component === "movies") {
-      setShowMovies();
-    }
-  };
+  const [searchClicked, setSearchClicked] = useState(false);
 
   const updateFilterMovies = (movies, query, short) => {
     const moviesCards = filterMoviesByTitle(movies, query, short);
@@ -54,6 +48,7 @@ function Movies({ onLikeCard, onDeleteCard, savedMovies }) {
     try {
       setIsLoading(true);
       const moviesData = localStorage.getItem(KEYS.ALL_MOVIES);
+      setSearchClicked(prevState => !prevState);
       let cardsData;
       if (moviesData) {
         cardsData = JSON.parse(moviesData);
@@ -89,22 +84,12 @@ function Movies({ onLikeCard, onDeleteCard, savedMovies }) {
     );
   }, [filteredMovies]);
 
-  useEffect(() => {
-    if (originalMovies.length) {
-      const updatedFilteredMovies = isShortMovies
-        ? filterMoviesByDuration(originalMovies)
-        : originalMovies;
-      setFilteredMovies(updatedFilteredMovies);
-    }
-  }, [originalMovies, isShortMovies]);
-
   return (
     <main className="movies movies_large" aria-label="Фильмы">
       <SearchForm
         onSearchMovies={handleSearchMovies}
         onFilterMovies={handleFilterShortMovies}
         isShortMovies={isShortMovies}
-        resetShowMovies={resetShowMovies}
       />
       <MoviesCardList
         cards={filteredMovies}
@@ -115,7 +100,7 @@ function Movies({ onLikeCard, onDeleteCard, savedMovies }) {
         savedMovies={savedMovies}
         onLikeCard={onLikeCard}
         onDeleteCard={onDeleteCard}
-        resetShowMovies={resetShowMovies}
+        searchClicked={searchClicked}
       />
     </main>
   );
