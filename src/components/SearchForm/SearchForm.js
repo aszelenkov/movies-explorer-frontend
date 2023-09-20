@@ -22,7 +22,7 @@ function SearchForm({ onSearchMovies, onFilterMovies, isShortMovies }) {
       setValues({ searchForm: localStorage.getItem(KEYS.MOVIE_SEARCH) });
     }
   }, [location]);
-
+//useEffect validation
   useEffect(() => {
     setIsValid(true);
   }, []);
